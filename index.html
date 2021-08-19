@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Transcription Helper</title>
+  <link rel="stylesheet" type="text/css" href="main.css" media="all">
+
+</head>
+
+<body>
+  <button id="manual">使い方など</button><br><br>
+  <div id="man_txt" style="display:none">
+    <h3>●文字起こしの補助ソフト</h3>
+    <p>会議やインタビューなどの文字起こしをアシストするアプリケーションです。動画や音声を聞きながらテキスト入力ができます。</p>
+
+    <h3>●ショートカット：Shift+Return＝再生／停止、Shift+Space＝ちょい戻し、Shift+Option+Space＝ちょい送り</h3>
+    <p>テキスト入力中でも、キーボードショートカットで再生、一時停止や、ちょい戻しが出来ます。</p>
+
+    <h3>●Mac/Chrome専用</h3>
+    <p>
+      ちなみに<b>MacのChrome専用です。</b>SafariやWindowsではうまく動かなかったと思います</p>
+
+    <h3>●再生速度が変えられる</h3>
+
+    <p>その他の再生機能はボタンで操作します。再生速度を遅くすると、一時停止や巻き戻しの回数が減って効率が良くなります。</p>
+    <p>不要な所は再生速度を速めたり、ちょい送りで飛ばしましょう。</p>
+
+    <h3>●一時保存機能</h3>
+
+    <p>
+      一時保存をクリックするとテキストエリアのデータをブラウザのlocal storage機能を使ってPCのどこかに保存します。この機能はバックアップ用です。うっかりテキストを消してしまった時などに、一時保存を読み込むをクリックすると、保存した所までのデータが復活できるかもしれません。
+    </p>
+
+    <h3>●テキストの保存</h3>
+
+    <p>クリップボードへのコピーとテキストファイルのダウンロードができます。</p>
+
+    <h3>●動画・音声フォーマット</h3>
+
+    <p>MP4やMP3などの動画・音声フォーマットが使えます。</p>
+
+    <h3>●利用条件など</h3>
+
+    <p>
+      MITライセンス。利用、再配布に伴うトラブルに作者は一切責任を負いません。<br>
+    </p>
+
+    <p>ryjkmr.com</p>
+  </div>
+
+  <button id="store" class="noFocus">テキストを一時保存</button>
+  <button id="restore" class="noFocus">一時保存したテキストを読み込む</button>
+  <button id="copy" class="noFocus">テキストをコピー</button>
+  <button id="download" class="noFocus">テキストをダウンロード</button>
+  <br>
+
+
+  <br />
+  <div>
+    <!-- ビデオ -->
+    <video id="media" width="800" controls class="noFocus">
+      <source src="sample.mp4">
+    </video>
+  </div>
+  <!-- コントローラー部 -->
+  <p id="controller" class="noFocus">
+    <input id="fileInput" class="noFocus" type="file" onchange="setFilePath()" value="sample_sound.mp3" />
+    <button id="playOrPauseButton" class="noFocus">再生</button>
+    <button id="stopButton" class="noFocus">先頭に</button>
+    <button id="backButton" class="noFocus">ちょい戻し</button>
+    <button id="forwardButton" class="noFocus">ちょい送り</button>
+    <button id="quickButton" class="noFocus">高速再生</button>
+    <button id="slowButton" class="noFocus">低速再生</button>
+    <button id="normalButton" class="noFocus">通常再生</button>
+    <br>
+    再生レート：<span id="rate"></span>
+  </p>
+
+  <h6>ショートカット：再生／停止="Shift+Return"、ちょい戻し="Shift+Space"、ちょい送り="Shift+Option+Space"<br>
+  </h6>
+  <textarea id="genko"></textarea>
+  <br>
+
+  <script type="text/javascript" src="main.js" charset="UTF-8"></script>
+
+</body>
+
+</html>
